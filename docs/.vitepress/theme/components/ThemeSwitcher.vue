@@ -20,13 +20,13 @@
     <div class="switcher-section">
       <h3>Logo 样式</h3>
       <div class="switcher-grid">
-        <button 
-          v-for="(logo, index) in logos" 
-          :key="logo.name"
-          :class="['switcher-btn', { active: currentLogo === LOGO_OPTIONS[index].path }]"
-          @click="switchLogo(LOGO_OPTIONS[index].path)"
+        <button
+            v-for="(logo, index) in logos"
+            :key="logo.name"
+            :class="['switcher-btn', { active: currentLogo === LOGO_OPTIONS[index].path }]"
+            @click="switchLogo(LOGO_OPTIONS[index].path)"
         >
-          <img :src="logo.path" :alt="logo.name" class="logo-preview" />
+          <img :src="logo.path" :alt="logo.name" class="logo-preview"/>
           <span>{{ logo.name }}</span>
         </button>
       </div>
@@ -36,14 +36,14 @@
     <div class="switcher-section">
       <h3>背景动画</h3>
       <div class="switcher-grid">
-        <button 
-          v-for="(bg, index) in backgrounds" 
-          :key="bg.name"
-          :class="['switcher-btn', { active: currentBackground === BACKGROUND_OPTIONS[index].path }]"
-          @click="switchBackground(BACKGROUND_OPTIONS[index].path)"
+        <button
+            v-for="(bg, index) in backgrounds"
+            :key="bg.name"
+            :class="['switcher-btn', { active: currentBackground === BACKGROUND_OPTIONS[index].path }]"
+            @click="switchBackground(BACKGROUND_OPTIONS[index].path)"
         >
           <div class="bg-preview">
-            <img :src="bg.path" :alt="bg.name" />
+            <img :src="bg.path" :alt="bg.name"/>
           </div>
           <span>{{ bg.name }}</span>
         </button>
@@ -53,26 +53,26 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, computed } from 'vue'
-import { withBase } from 'vitepress'
-import { useTheme } from '../composables/useTheme'
-import { LOGO_OPTIONS, BACKGROUND_OPTIONS } from '../config/paths'
+import {onMounted, computed} from 'vue'
+import {withBase} from 'vitepress'
+import {useTheme} from '../composables/useTheme'
+import {LOGO_OPTIONS, BACKGROUND_OPTIONS} from '../config/paths'
 
-const { currentLogo, currentBackground, switchLogo, switchBackground, initTheme } = useTheme()
+const {currentLogo, currentBackground, switchLogo, switchBackground, initTheme} = useTheme()
 
 // 使用withBase处理路径配置
-const logos = computed(() => 
-  LOGO_OPTIONS.map(logo => ({
-    ...logo,
-    path: withBase(logo.path)
-  }))
+const logos = computed(() =>
+    LOGO_OPTIONS.map(logo => ({
+      ...logo,
+      path: withBase(logo.path)
+    }))
 )
 
-const backgrounds = computed(() => 
-  BACKGROUND_OPTIONS.map(bg => ({
-    ...bg,
-    path: withBase(bg.path)
-  }))
+const backgrounds = computed(() =>
+    BACKGROUND_OPTIONS.map(bg => ({
+      ...bg,
+      path: withBase(bg.path)
+    }))
 )
 
 onMounted(() => {
@@ -186,21 +186,21 @@ onMounted(() => {
   .theme-switcher {
     padding: 1rem;
   }
-  
+
   .switcher-grid {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 0.75rem;
   }
-  
+
   .switcher-btn {
     padding: 0.75rem;
   }
-  
+
   .logo-preview {
     width: 50px;
     height: 16px;
   }
-  
+
   .bg-preview {
     width: 60px;
     height: 45px;
@@ -212,11 +212,25 @@ onMounted(() => {
   animation: fadeInUp 0.6s ease-out;
 }
 
-.switcher-btn:nth-child(1) { animation-delay: 0.1s; }
-.switcher-btn:nth-child(2) { animation-delay: 0.2s; }
-.switcher-btn:nth-child(3) { animation-delay: 0.3s; }
-.switcher-btn:nth-child(4) { animation-delay: 0.4s; }
-.switcher-btn:nth-child(5) { animation-delay: 0.5s; }
+.switcher-btn:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.switcher-btn:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.switcher-btn:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.switcher-btn:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.switcher-btn:nth-child(5) {
+  animation-delay: 0.5s;
+}
 
 @keyframes fadeInUp {
   from {

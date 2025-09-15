@@ -1,6 +1,6 @@
 import {ref, watch} from 'vue'
-import { withBase } from 'vitepress'
-import { ASSETS } from '../config/paths'
+import {withBase} from 'vitepress'
+import {ASSETS} from '../config/paths'
 
 // 全局状态
 export const currentLogo = ref(ASSETS.LOGO_DEFAULT)
@@ -13,7 +13,7 @@ export const initTheme = () => {
         // console.log('Not in browser environment, skipping localStorage')
         return
     }
-    
+
     try {
         // 从localStorage恢复设置
         const savedLogo = localStorage.getItem('kapok-logo')
@@ -28,7 +28,7 @@ export const initTheme = () => {
             currentBackground.value = savedBackground
             // console.log('Restored background from localStorage:', savedBackground)
         }
-        
+
         // console.log('Theme initialized successfully:', {
         //     logo: currentLogo.value,
         //     background: currentBackground.value
@@ -82,7 +82,7 @@ watch(currentBackground, (newBg) => {
     if (typeof document === 'undefined') {
         return
     }
-    
+
     // 使用withBase处理路径后更新CSS变量
     const bgUrl = withBase(newBg)
     document.documentElement.style.setProperty('--hero-bg-image', `url('${bgUrl}')`)
@@ -91,7 +91,7 @@ watch(currentBackground, (newBg) => {
     const updateHeroImage = () => {
         const selectors = [
             '.VPHero .image img',
-            '.VPHero .VPImage img', 
+            '.VPHero .VPImage img',
             '.VPHero img',
             '.vp-hero .image img',
             '.custom-hero-image img',

@@ -16,7 +16,7 @@
 
 import {defineConfig} from 'vitepress'
 
-// 路径配置 - 请将 'kapok-docs' 修改为你的实际仓库名
+// 路径配置 - 根据实际GitHub仓库名配置
 const BASE_PATH = '/kapok-docs'
 
 export default defineConfig({
@@ -52,31 +52,31 @@ export default defineConfig({
         logo: '/logo.svg',
         siteTitle: 'Kapok Docs',
         // 启用最后更新时间显示
-        lastUpdatedText: '最后更新',
-        
+        lastUpdated: '最后更新',
+
         // 中文界面文本配置
         docFooter: {
             prev: '上一页',
             next: '下一页'
         },
-        
+
         // 大纲标题
         outlineTitle: '页面导航',
-        
+
         // 返回顶部
         returnToTopLabel: '回到顶部',
-        
+
         // 外部链接图标
         externalLinkIcon: true,
-        
+
         // 侧边栏菜单标签
         sidebarMenuLabel: '菜单',
-        
+
         // 深色模式切换标签
         darkModeSwitchLabel: '主题',
         lightModeSwitchTitle: '切换到浅色模式',
         darkModeSwitchTitle: '切换到深色模式',
-        
+
         // 搜索功能中文配置
         search: {
             provider: 'local',

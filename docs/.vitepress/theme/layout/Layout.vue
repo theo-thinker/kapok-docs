@@ -16,7 +16,7 @@
 <script setup lang="ts">
 import {onMounted, computed} from 'vue'
 import DefaultTheme from 'vitepress/theme'
-import { withBase } from 'vitepress'
+import {withBase} from 'vitepress'
 import {useTheme} from '../composables/useTheme'
 
 const {currentBackground, initTheme} = useTheme()

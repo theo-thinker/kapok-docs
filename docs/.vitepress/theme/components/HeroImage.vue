@@ -1,15 +1,15 @@
 <template>
-  <img 
-    :src="currentBackground" 
-    :alt="imageAlt"
-    class="hero-image"
-    @load="onImageLoad"
+  <img
+      :src="currentBackground"
+      :alt="imageAlt"
+      class="hero-image"
+      @load="onImageLoad"
   />
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useTheme } from '../composables/useTheme'
+import {computed} from 'vue'
+import {useTheme} from '../composables/useTheme'
 
 interface Props {
   src?: string
@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<Props>(), {
   alt: 'Hero Animation'
 })
 
-const { currentBackground } = useTheme()
+const {currentBackground} = useTheme()
 
 const imageAlt = computed(() => props.alt)
 
