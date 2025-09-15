@@ -1,0 +1,20 @@
+{
+  "name": "kapok-docs",
+  "version": "1.0.0",
+  "description": "企业级个人日常开发文档网站",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "sass": "^1.92.1",
+    "vitepress": "^1.6.4"
+  },
+  "dependencies": {
+    "vue": "^3.5.21"
+  }
+}
