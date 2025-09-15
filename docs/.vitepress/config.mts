@@ -1,3 +1,19 @@
+/*
+ * Copyright 2024 Kapok Docs Contributors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import {defineConfig} from 'vitepress'
 
 // 路径配置 - 请将 'kapok-docs' 修改为你的实际仓库名
@@ -91,7 +107,8 @@ export default defineConfig({
             {text: '指南', link: '/markdown-examples'},
             {text: 'API', link: '/api-examples'},
             {text: 'VitePress指南', link: '/vitepress-guide'},
-            {text: '主题切换', link: '/theme-switcher'}
+            {text: '主题切换', link: '/theme-switcher'},
+            {text: '许可证', link: '/license'}
         ],
         sidebar: [
             {
@@ -106,6 +123,12 @@ export default defineConfig({
                 items: [
                     {text: 'VitePress 使用指南', link: '/vitepress-guide'}
                 ]
+            },
+            {
+                text: '项目信息',
+                items: [
+                    {text: '许可证信息', link: '/license'}
+                ]
             }
         ],
         // 编辑链接配置
@@ -117,8 +140,8 @@ export default defineConfig({
             {icon: 'github', link: 'https://github.com/yourusername/kapok-docs'}
         ],
         footer: {
-            message: 'Released under the MIT License.',
-            copyright: 'Copyright © 2024 Kapok Docs'
+            message: 'Released under the Apache License 2.0.',
+            copyright: 'Copyright © 2024 Kapok Docs Contributors'
         }
     }
 })

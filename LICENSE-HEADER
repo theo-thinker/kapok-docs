@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Kapok Docs Contributors
+ * Copyright 2025 Kapok Docs Contributors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,21 +13,3 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import type {Theme} from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
-import Layout from './layout/Layout.vue'
-import ThemeSwitcher from './components/ThemeSwitcher.vue'
-import HeroImage from './components/HeroImage.vue'
-import './custom.css'
-
-const theme: Theme = {
-    extends: DefaultTheme,
-    Layout,
-    enhanceApp({app}) {
-        app.component('ThemeSwitcher', ThemeSwitcher)
-        app.component('HeroImage', HeroImage)
-    }
-}
-
-export default theme
